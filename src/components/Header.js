@@ -9,7 +9,6 @@ const contractAddress = "0x709019bdAf0B5384609DC9f27Ab4517E1B7ca6f5";
 const contractABI = abi;
 
 const Header = () => {
-  const [currentAccount, setCurrentAccount] = useState("");
   const [isConnected, setIsConnected] = useState(false);
   const [tip, setTip] = useState(0.005);
   const [name, setName] = useState("");
@@ -48,7 +47,6 @@ const Header = () => {
         });
       }
       setIsConnected(true);
-      setCurrentAccount(accounts[0]);
     } catch (error) {
       console.log(error);
     }
@@ -94,7 +92,7 @@ const Header = () => {
       window.location.replace(window.location.pathname)
     })
   }, []);
-  
+
   return (
     <header className="side-header flex items-center justify-end">
       {isConnected ? (

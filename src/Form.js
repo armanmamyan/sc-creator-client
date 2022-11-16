@@ -385,7 +385,7 @@ const Form = forwardRef(({ contractName, setContract }, ref) => {
               <a
                 href="https://remix.ethereum.org/"
                 target='_blank'
-                rel="norefferer"
+                rel="noreferrer"
                 onClick={handleSCDelete}
                 className="form--btn uppercase"
               >
