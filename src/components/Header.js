@@ -27,21 +27,6 @@ const Header = () => {
     setTip(event.target.value);
   };
 
-  const isWalletConnected = async () => {
-    try {
-      const { ethereum } = window;
-
-      const accounts = await ethereum.request({ method: "eth_accounts" });
-      if (!!accounts?.length) {
-        setIsConnected(true);
-      } else {
-        console.log("make sure MetaMask is connected");
-      }
-    } catch (error) {
-      console.log("error: ", error);
-    }
-  };
-
   const connectWallet = async () => {
     try {
       const { ethereum } = window;
@@ -53,7 +38,16 @@ const Header = () => {
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
-
+      
+      const chainId = await ethereum.request({ method: "eth_chainId" });
+      
+      if (chainId !== "0x1") {
+        await window.ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x1" }],
+        });
+      }
+      setIsConnected(true);
       setCurrentAccount(accounts[0]);
     } catch (error) {
       console.log(error);
@@ -94,19 +88,13 @@ const Header = () => {
   };
 
   useEffect(() => {
-    let buyMeACoffee;
-    isWalletConnected();
-
-    const { ethereum } = window;
-
-    // Listen for new memo events.
-    if (ethereum) {
-      const provider = new ethers.providers.Web3Provider(ethereum, "any");
-      const signer = provider.getSigner();
-      buyMeACoffee = new ethers.Contract(contractAddress, contractABI, signer);
-    }
+    const isConnected = window.ethereum.isConnected();
+    setIsConnected(isConnected);
+    window.ethereum.on('accountsChanged', () => {
+      window.location.replace(window.location.pathname)
+    })
   }, []);
-
+  
   return (
     <header className="side-header flex items-center justify-end">
       {isConnected ? (
