@@ -11,7 +11,7 @@ const contractABI = abi;
 const Header = () => {
   const [currentAccount, setCurrentAccount] = useState("");
   const [isConnected, setIsConnected] = useState(false);
-  const [tip, setTip] = useState(0.008);
+  const [tip, setTip] = useState(0.005);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
