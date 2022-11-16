@@ -1,12 +1,11 @@
-import Azuki from '../assets/azuki-bg.jpeg';
-import GasLess from '../assets/gas-less.png';
+import Azuki from '../assets/azuki-bg.webp';
+import GasLess from '../assets/gas-less.webp';
 import Refund from '../assets/refund.webp';
 
 export const smartContractDetails = [
     {
         id: 'ERC721A',
         type: 'ERC721A',
-        subtitle: '',
         founders: 'Created by Azuki Team',
         listOfPerks: ['Highly Known', 'Highly Optimized', 'Famous for cheap mint price'],
         fullDescription: ['The Azuki contract will enable minting multiple NFTs for essentially the same cost of minting a single NFT.'],
@@ -17,8 +16,7 @@ export const smartContractDetails = [
     {
         id: 'ERC721+',
         type: 'ERC721+',
-        subtitle: '',
-        founders: 'Community',
+        founders: 'By Tom Hirst and Jonathan Snow',
         listOfPerks: ['Save up to 70% on minting fees', 'Save up to 35% on transfer fees'],
         fullDescription: ['Replaced ERC721Enumerable', 'Replaced total supply reliant functions with a counters solution'],
         fullDescription2: ['Changed Your Contract’s Counter Logic', 'Checked for unobvious ERC721Enumerable imports'],
@@ -28,11 +26,11 @@ export const smartContractDetails = [
     {
         id: 'ERC721R',
         type: 'ERC721R',
-        subtitle: '',
-        founders: 'Cut Gas Fee Up To 70% and refund logic',
+        founders: 'Developed by Exo Digital and mixed with gas saving smart contract',
         listOfPerks: ['Low risk purchase', 'Protects against rug pulls', 'Forces greater accountability '],
         fullDescription: ['Builds trust with buyers'],
         fullDescription2: ['The project floor price is unlikely to drop below the mint price while refunds are open ', 'Short term flippers leave the project early leaving a high quality core intact'],
         image: Refund,
+        link: 'https://github.com/exo-digital-labs/ERC721R'
     },
 ]

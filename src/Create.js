@@ -55,12 +55,12 @@ function Create() {
                 ({
                   id,
                   type,
-                  subtitle,
                   founders,
                   listOfPerks,
                   fullDescription,
                   fullDescription2,
                   image,
+                  link
                 }) => {
                   const descIsMoreThan1 = fullDescription.length > 1;
                   const descIsMoreThan2 = fullDescription2.length > 1;
@@ -72,12 +72,12 @@ function Create() {
                       descIsMoreThan1={descIsMoreThan1}
                       descIsMoreThan2={descIsMoreThan2}
                       type={type}
-                      subtitle={subtitle}
                       founders={founders}
                       listOfPerks={listOfPerks}
                       fullDescription={fullDescription}
                       fullDescription2={fullDescription2}
                       handleContractSelection={handleContractSelection}
+                      link={link}
                     />
                   );
                 }

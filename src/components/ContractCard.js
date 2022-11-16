@@ -1,19 +1,31 @@
 import { ReactComponent as Star } from "../assets/star.svg";
 
-const ContractCard = ({id,image, type, subtitle, founders, listOfPerks, descIsMoreThan1 = false, descIsMoreThan2=false, handleContractSelection, fullDescription, fullDescription2}) => (
+const ContractCard = ({
+  id,
+  image,
+  type,
+  founders,
+  listOfPerks,
+  descIsMoreThan1 = false,
+  descIsMoreThan2 = false,
+  handleContractSelection,
+  fullDescription,
+  fullDescription2,
+  link,
+}) => (
   <div
     id={id}
-    className="sc-card flex flex-col justify-between items-center py-4 pl-4 pr-6 rounded-3xl mb-9 w-1/4"
+    className="sc-card flex flex-col items-center py-4 pl-4 pr-6 rounded-3xl mb-9 xl:w-1/4"
   >
     <div className="sc-banner z-10">
       <img src={image} alt="" />
     </div>
     <div className="sc--content-wrapper px-4 py-6 z-10">
       <div className="sc-title mb-8 lg:gap-16 md:gap-12 sm:gap-8">
-        <div>
+        <a href={link} target='_blank' rel="noreferrer" className="flex gap-4">
           <h2 className="font-bold mb-2 text-lg">{type}</h2>
-          <h4 className="text-md">{subtitle}</h4>
-        </div>
+          <i class="fa-solid fa-up-right-from-square"></i>
+        </a>
         <div className="flex items-center self-start gap-2.5">
           <div className="w-5 h-5">
             <Star className="w-full h-full" />
