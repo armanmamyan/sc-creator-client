@@ -15,7 +15,7 @@ const ContractCard = ({
 }) => (
   <div
     id={id}
-    className="sc-card flex flex-col items-center py-4 pl-4 pr-6 rounded-3xl mb-9 xl:w-1/4"
+    className="sc-card flex flex-col justify-between items-center py-4 pl-4 pr-6 rounded-3xl mb-9 xl:w-1/4"
   >
     <div className="sc-banner z-10">
       <img src={image} alt="" />
@@ -24,20 +24,20 @@ const ContractCard = ({
       <div className="sc-title mb-8 lg:gap-16 md:gap-12 sm:gap-8">
         <a href={link} target='_blank' rel="noreferrer" className="flex gap-4">
           <h2 className="font-bold mb-2 text-lg">{type}</h2>
-          <i class="fa-solid fa-up-right-from-square"></i>
+          <i className="fa-solid fa-up-right-from-square"></i>
         </a>
         <div className="flex items-center self-start gap-2.5">
           <div className="w-5 h-5">
             <Star className="w-full h-full" />
           </div>
-          <h4 className="text-md">{founders}</h4>
+          <h4 className="text-sm">{founders}</h4>
         </div>
       </div>
       <div className="sc-details flex flex-col gap-6">
         <ul className="list-disc">
           {listOfPerks.map((item, index) => (
             <li key={`${index}_${item}`} className="mb-2">
-              <h4 className="text-md">{item}</h4>
+              <h4 className="text-sm">{item}</h4>
             </li>
           ))}
         </ul>
@@ -46,7 +46,7 @@ const ContractCard = ({
             <ul className="list-disc">
               {fullDescription.map((item, index) => (
                 <li key={`${index}_${item}`} className="mb-2">
-                  <h4 className="text-md">{item}</h4>
+                  <h4 className="text-sm">{item}</h4>
                 </li>
               ))}
             </ul>
@@ -59,7 +59,7 @@ const ContractCard = ({
             <ul className="list-disc">
               {fullDescription2.map((item, index) => (
                 <li key={`${index}_${item}`} className="mb-2">
-                  <h4 className="text-md">{item}</h4>
+                  <h4 className="text-sm">{item}</h4>
                 </li>
               ))}
             </ul>

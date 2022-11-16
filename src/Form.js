@@ -150,7 +150,7 @@ const Form = forwardRef(({ contractName, setContract }, ref) => {
 
   return (
     <div ref={ref} className={`form--row h-screen flex flex-col justify-center type-${checkContractType()?.toLowerCase()}`}>
-      <div className="form--title flex items-center gap-3 mb-14">
+      <div className="form--title flex items-center gap-3">
         <button type="button" onClick={handleGoBack} className="form--btn_back">
           <i className="fa-solid fa-circle-arrow-left" />
         </button>
@@ -332,7 +332,7 @@ const Form = forwardRef(({ contractName, setContract }, ref) => {
           </label>
           <div
             className="tooltip"
-            data-tooltip="Should be lower than max. Attention the highest the number the high the risk of long or unfulfilled TX"
+            data-tooltip="Should be lower than max. Attention big number can cause long or unfulfilled TX"
           >
             <i className="fa-solid fa-circle-exclamation"></i>
           </div>

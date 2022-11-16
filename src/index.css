@@ -116,11 +116,19 @@
 }
 
 .gear-container {
-  width: calc(100% - 80px);
   max-width: 1790px;
   overflow-x: hidden;
   overflow-y: auto;
   margin: 0 auto;
+  padding-block-start: 90px;
+}
+
+.sc-selector-title{
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 100px;
+  transform: translateY(-50%);
 }
 
 .sc-details > * {
@@ -320,7 +328,7 @@
     content: attr(data-tooltip);
     display: none;
     position: absolute;
-    bottom: -136px;
+    bottom: -86px;
     right: 0;
     width: 300px;
     padding: 20px 16px;
