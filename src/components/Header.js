@@ -28,20 +28,21 @@ const Header = () => {
 
   const connectWallet = async () => {
     try {
-      const { ethereum } = window;
+      const provider = window?.coinbaseWalletExtension || window?.ethereum;
 
-      if (!ethereum) {
+      if (!provider) {
         console.log("please install MetaMask");
+        window.location.assign("https://metamask.io/")
       }
 
-      const accounts = await ethereum.request({
+      await provider.request({
         method: "eth_requestAccounts",
       });
       
-      const chainId = await ethereum.request({ method: "eth_chainId" });
+      const chainId = await provider.request({ method: "eth_chainId" });
       
       if (chainId !== "0x1") {
-        await window.ethereum.request({
+        await provider.request({
           method: "wallet_switchEthereumChain",
           params: [{ chainId: "0x1" }],
         });
@@ -86,8 +87,6 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const isConnected = window.ethereum.isConnected();
-    setIsConnected(isConnected);
     window.ethereum.on('accountsChanged', () => {
       window.location.replace(window.location.pathname)
     })

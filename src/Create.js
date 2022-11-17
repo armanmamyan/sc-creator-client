@@ -44,9 +44,9 @@ function Create() {
   return (
     <>
       <Header />
-      <div className="relative gear-container pr-20 pl-8">
+      <div className="relative gear-container pr-20 pl-8 h-full">
         {!contract ? (
-          <div className="sc-selector flex flex-col justify-center">
+          <div className="sc-selector flex flex-col justify-center items-center h-full">
             <h1 className="sc-selector-title text-3xl font-bold text-black">
               Choose your smart contract!
             </h1>
