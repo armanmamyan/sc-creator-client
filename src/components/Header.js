@@ -94,9 +94,6 @@ const Header = () => {
 
   return (
     <header className="side-header flex items-center justify-end">
-      <div className="mr-auto pl-4">
-        <h2 className="text-bold text-md">Created by <span className="underline">c0demaster.eth</span></h2>
-      </div>
       {isConnected ? (
         <form
           onSubmit={buyCoffee}
