@@ -43,7 +43,7 @@ function Create() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="relative gear-container pr-20 pl-8 h-full">
         {!contract ? (
           <div className="sc-selector flex flex-col justify-center items-center h-full">

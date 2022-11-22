@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {Toaster} from 'react-hot-toast';
 import Create from './Create';
 import App from './App';
+import TokenSwap from './TokenSwap';
 import reportWebVitals from './reportWebVitals';
 import "@fortawesome/fontawesome-free/js/all";
 import './index.css';
@@ -15,6 +16,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="create" element={<Create />} />
+        <Route path="swap-token" element={<TokenSwap />} />
       </Routes>
       <Toaster position="top-center" reverseOrder={false} />
     </BrowserRouter>

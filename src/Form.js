@@ -1,8 +1,8 @@
 import { useState, forwardRef, useCallback, useEffect } from "react";
 import CodeMirror from "@uiw/react-codemirror";
+import { ethers } from "ethers";
 import { javascript } from "@codemirror/lang-javascript";
 import toast from 'react-hot-toast'
-
 const Form = forwardRef(({ contractName, setContract }, ref) => {
   // States
   const [contractDetails, setContractDetails] = useState({});
@@ -70,7 +70,7 @@ const Form = forwardRef(({ contractName, setContract }, ref) => {
         CONTRACT_VERSION: isRefund ? "erc721A" : contractName.toUpperCase(),
       };
       try {
-        const createContract = await fetch("https://sc-creator.herokuapp.com/apicreate-contract", {
+        const createContract = await fetch("https://sc-creator.herokuapp.com/api/create-contract", {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -80,6 +80,7 @@ const Form = forwardRef(({ contractName, setContract }, ref) => {
         });
 
         const contractToText = await createContract.text();
+        
         const url = `data:text/plain;charset=utf-8,${encodeURIComponent(
           contractToText
         )}`;
